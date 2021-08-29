@@ -190,7 +190,7 @@ def new_member(update: Update, context: CallbackContext):
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
-                    "PRAISE YOURSELVES! MY MASTER JUST JOINED YOUR CHAT!", 
+                    "PRAISE YOURSELF THE GREAT WIZARD LORD JUST JOINED YOUR CHAT (https://telegra.ph/file/2690809c6b9c1805e68f9.jpg) ", 
                        reply_to_message_id=reply
                 )
                 welcome_log = (
@@ -203,7 +203,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Devs
             elif new_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "Be Patient! A member of the Main System just joined",
+                    "BEWARE GRADE 02 CURSE HOLDER THE GREAT WIZARD JUST JOINED THE CHAT (https://telegra.ph/file/5058a17bd9447eb07a47f.png) ",
                     reply_to_message_id=reply,
                 )
                 welcome_log = (
@@ -216,7 +216,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Sudos
             elif new_mem.id in DRAGONS:
                 update.effective_message.reply_text(
-                    "Whoa! A Legend disaster just joined! Stay Alert!",
+                    "Stay Alert! Special CURSE HOLDER WIZARD DRAGON JOINED IN (https://telegra.ph/file/9f0bdf66794006d7b0df9.jpg) ",
                     reply_to_message_id=reply,
                 )
                 welcome_log = (
@@ -229,7 +229,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Support
             elif new_mem.id in DEMONS:
                 update.effective_message.reply_text(
-                    "Huh! Someone with a Demon disaster level just joined!",
+                    "All Hail To a Wizard Demon (https://telegra.ph/file/79a6740efb2c8c0bc2c9d.jpg)  ",
                     reply_to_message_id=reply,
                 )
                 welcome_log = (
@@ -242,7 +242,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Whitelisted
             elif new_mem.id in TIGERS:
                 update.effective_message.reply_text(
-                    "Fearless! A Tiger disaster just joined!", reply_to_message_id=reply
+                    "Fearless! A Wizard Tiger disaster just joined! (https://telegra.ph/file/c99fe23a7d16e1ed0e6bb.jpg) ", reply_to_message_id=reply
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
