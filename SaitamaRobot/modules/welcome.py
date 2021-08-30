@@ -193,7 +193,7 @@ def new_member(update: Update, context: CallbackContext):
                     "PRAISE YOURSELF THE GREAT WIZARD LORD JUST JOINED YOUR CHAT .(https://telegra.ph/file/2690809c6b9c1805e68f9.jpg) ", 
                     reply_to_message_id=reply,
 
-                    parse_mode=Parsemode.MARKDOWN,
+                    parse_mode=ParseMode.MARKDOWN,
 
             
                 )
@@ -211,7 +211,7 @@ def new_member(update: Update, context: CallbackContext):
 
                     reply_to_message_id=reply,
 
-                    parse_mode=Parsemode.MARKDOWN,
+                    parse_mode=ParseMode.MARKDOWN,
 
                 )
                 welcome_log = (
@@ -227,7 +227,7 @@ def new_member(update: Update, context: CallbackContext):
                     "Stay Alert! Special CURSE HOLDER WIZARD DRAGON JOINED IN .(https://telegra.ph/file/9f0bdf66794006d7b0df9.jpg) ",
                     reply_to_message_id=reply,
 
-                    parse_mode=Parsemode.MARKDOWN,
+                    parse_mode=ParseMode.MARKDOWN,
  
                 )
                 welcome_log = (
@@ -242,7 +242,7 @@ def new_member(update: Update, context: CallbackContext):
                 update.effective_message.reply_text(
                     "All Hail To a Wizard Demon. (https://telegra.ph/file/79a6740efb2c8c0bc2c9d.jpg)  ",
                     reply_to_message_id=reply,
-                    Parsemode=Parsemode.MARKDOWN,
+                    Parsemode=ParseMode.MARKDOWN,
 
                 )
                 welcome_log = (
@@ -258,7 +258,7 @@ def new_member(update: Update, context: CallbackContext):
                     "Fearless! A Wizard Tiger disaster just joined!.(https://telegra.ph/file/c99fe23a7d16e1ed0e6bb.jpg) ", 
                     reply_to_message_id=reply,
 
-                    parse_mode=Parsemode.MARKDOWN,
+                    parse_mode=ParseMode.MARKDOWN,
 
         
                 )
