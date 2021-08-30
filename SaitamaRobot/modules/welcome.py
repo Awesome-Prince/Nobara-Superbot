@@ -260,7 +260,7 @@ def new_member(update: Update, context: CallbackContext):
 
                     parse_mode=PARSEMODE.MARKDOWN,
 
-        )
+        
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
