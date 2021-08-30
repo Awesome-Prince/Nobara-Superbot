@@ -33,6 +33,7 @@ cachetools
 fontTools
 gtts
 pyrogram
+pendulum
 wget
 Faker
 Python_arq
