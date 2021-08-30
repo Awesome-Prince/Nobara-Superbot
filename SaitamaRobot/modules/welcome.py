@@ -191,7 +191,9 @@ def new_member(update: Update, context: CallbackContext):
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
                     "PRAISE YOURSELF THE GREAT WIZARD LORD JUST JOINED YOUR CHAT [.](https://telegra.ph/file/2690809c6b9c1805e68f9.jpg) ", 
-                       reply_to_message_id=reply
+                     reply_to_message_id=reply
+                     parse_mode=ParseMode.MARKDOWN,
+            
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
@@ -205,6 +207,8 @@ def new_member(update: Update, context: CallbackContext):
                 update.effective_message.reply_text(
                     "BEWARE GRADE 02 CURSE HOLDER THE GREAT WIZARD JUST JOINED THE CHAT [.](https://telegra.ph/file/5058a17bd9447eb07a47f.png) ",
                     reply_to_message_id=reply,
+                    parse_mode=ParseMode.MARKDOWN,
+
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
@@ -218,6 +222,8 @@ def new_member(update: Update, context: CallbackContext):
                 update.effective_message.reply_text(
                     "Stay Alert! Special CURSE HOLDER WIZARD DRAGON JOINED IN [.](https://telegra.ph/file/9f0bdf66794006d7b0df9.jpg) ",
                     reply_to_message_id=reply,
+                    parse_mode=ParseMode.MARKDOWN,
+ 
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
@@ -231,6 +237,8 @@ def new_member(update: Update, context: CallbackContext):
                 update.effective_message.reply_text(
                     "All Hail To a Wizard Demon[.] (https://telegra.ph/file/79a6740efb2c8c0bc2c9d.jpg)  ",
                     reply_to_message_id=reply,
+                    parse_mode=ParseMode.MARKDOWN,
+
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
@@ -242,12 +250,17 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Whitelisted
             elif new_mem.id in TIGERS:
                 update.effective_message.reply_text(
-                    "Fearless! A Wizard Tiger disaster just joined! [.](https://telegra.ph/file/c99fe23a7d16e1ed0e6bb.jpg) ", reply_to_message_id=reply
+                    "Fearless! A Wizard Tiger disaster just joined! [.](https://telegra.ph/file/c99fe23a7d16e1ed0e6bb.jpg) ", 
+                     reply_to_message_id=reply
+                     parse_mode=ParseMode.MARKDOWN,
+
+        )
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
                     f"A Tiger disaster user joined the chat"
+                    parse_mode=ParseMode.MARKDOWN, 
                 )
                 continue
 
