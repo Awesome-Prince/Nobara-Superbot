@@ -1,4 +1,5 @@
 import html
+import asyncio
 
 from telegram import ParseMode, Update
 from telegram.error import BadRequest
