@@ -242,7 +242,7 @@ def new_member(update: Update, context: CallbackContext):
                 update.effective_message.reply_text(
                     "All Hail To a Wizard Demon. (https://telegra.ph/file/79a6740efb2c8c0bc2c9d.jpg)  ",
                     reply_to_message_id=reply,
-                    Parsemode=PARSEMODE.MARKDOWN
+                    Parsemode=PARSEMODE.MARKDOWN,
 
                 )
                 welcome_log = (
