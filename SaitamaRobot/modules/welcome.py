@@ -190,8 +190,10 @@ def new_member(update: Update, context: CallbackContext):
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
-                    "PRAISE YOURSELF THE GREAT WIZARD LORD JUST JOINED YOUR CHAT [.](https://telegra.ph/file/2690809c6b9c1805e68f9.jpg) ", 
-                parse_mode=ParseMode.MARKDOWN,
+                    "PRAISE YOURSELF THE GREAT WIZARD LORD JUST JOINED YOUR CHAT .(https://telegra.ph/file/2690809c6b9c1805e68f9.jpg) ", 
+                    reply_to_message_id=reply,
+
+                    parse_mode=PARSEMODE.MARKDOWN,
 
             
                 )
@@ -205,9 +207,11 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Devs
             elif new_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "BEWARE GRADE 02 CURSE HOLDER THE GREAT WIZARD JUST JOINED THE CHAT [.](https://telegra.ph/file/5058a17bd9447eb07a47f.png) ",
+                    "BEWARE GRADE 02 CURSE HOLDER THE GREAT WIZARD JUST JOINED THE CHAT .(https://telegra.ph/file/5058a17bd9447eb07a47f.png) ",
 
-                    parse_mode=ParseMode.MARKDOWN,
+                    reply_to_message_id=reply,
+
+                    parse_mode=PARSEMODE.MARKDOWN,
 
                 )
                 welcome_log = (
@@ -220,9 +224,10 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Sudos
             elif new_mem.id in DRAGONS:
                 update.effective_message.reply_text(
-                    "Stay Alert! Special CURSE HOLDER WIZARD DRAGON JOINED IN [.](https://telegra.ph/file/9f0bdf66794006d7b0df9.jpg) ",
-                parse_mode=ParseMode.MARKDOWN,
+                    "Stay Alert! Special CURSE HOLDER WIZARD DRAGON JOINED IN .(https://telegra.ph/file/9f0bdf66794006d7b0df9.jpg) ",
+                    reply_to_message_id=reply,
 
+                    parse_mode=PARSEMODE.MARKDOWN,
  
                 )
                 welcome_log = (
@@ -235,9 +240,9 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Support
             elif new_mem.id in DEMONS:
                 update.effective_message.reply_text(
-                    "All Hail To a Wizard Demon[.] (https://telegra.ph/file/79a6740efb2c8c0bc2c9d.jpg)  ",
-
-                    parse_mode=ParseMode.MARKDOWN,
+                    "All Hail To a Wizard Demon. (https://telegra.ph/file/79a6740efb2c8c0bc2c9d.jpg)  ",
+                    reply_to_message_id=reply,
+                    Parsemode=PARSEMODE.MARKDOWN
 
                 )
                 welcome_log = (
@@ -251,7 +256,9 @@ def new_member(update: Update, context: CallbackContext):
             elif new_mem.id in TIGERS:
                 update.effective_message.reply_text(
                     "Fearless! A Wizard Tiger disaster just joined!.(https://telegra.ph/file/c99fe23a7d16e1ed0e6bb.jpg) ", 
-                parse_mode=ParseMode.MARKDOWN,
+                    reply_to_message_id=reply,
+
+                    parse_mode=PARSEMODE.MARKDOWN,
 
         )
                 )
