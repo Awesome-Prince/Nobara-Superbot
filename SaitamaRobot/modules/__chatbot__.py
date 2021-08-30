@@ -24,14 +24,14 @@ def add_chat(update: Update, context: CallbackContext):
     is_kuki = sql.is_kuki(chat.id)
     if not is_kuki:
         sql.set_kuki(chat.id)
-        msg.reply_text("AI successfully enabled for this chat!")
+        msg.reply_text(" AI successfully enabled for this chat!")
         message = (
             f"<b>{html.escape(chat.title)}:</b>\n"
             f"AI_ENABLED\n"
             f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
         )
         return message
-    msg.reply_text("AI is already enabled for this chat!")
+    msg.reply_text(" AI is already enabled for this chat!")
     return ""
 
 
@@ -43,10 +43,10 @@ def rem_chat(update: Update, context: CallbackContext):
     user = update.effective_user
     is_kuki = sql.is_kuki(chat.id)
     if not is_kuki:
-        msg.reply_text("AI isn't enabled here in the first place!")
+        msg.reply_text(" AI isn't enabled here in the first place!")
         return ""
     sql.rem_kuki(chat.id)
-    msg.reply_text("AI disabled successfully!")
+    msg.reply_text("Cutiepii AI disabled successfully!")
     message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
         f"AI_DISABLED\n"
@@ -81,7 +81,7 @@ def chatbot(update: Update, context: CallbackContext):
             return
         Message = message.text
         bot.send_chat_action(chat_id, action="typing")
-        kukiurl = requests.get('https://kuki.up.railway.app/Kuki/chatbot?message='+Message)
+        kukiurl = requests.get('https://kukiapi.up.railway.app/Kuki/chatbot?message='+Message)
         Kuki = json.loads(kukiurl.text)
         kuki = Kuki['reply']
         sleep(0.3)
@@ -93,11 +93,9 @@ def list_all_chats(update: Update, context: CallbackContext):
     for chat in chats:
         try:
             x = context.bot.get_chat(int(*chat))
-            name = x.title if x.title else x.first_name
+            name = x.title or x.first_name
             text += f"• <code>{name}</code>\n"
-        except BadRequest:
-            sql.rem_kuki(*chat)
-        except Unauthorized:
+        except (BadRequest, Unauthorized):
             sql.rem_kuki(*chat)
         except RetryAfter as e:
             sleep(e.retry_after)
@@ -105,7 +103,6 @@ def list_all_chats(update: Update, context: CallbackContext):
    
 
 __help__ = """
-
 """
 
 __mod_name__ = "ChatBot"
@@ -113,24 +110,23 @@ __mod_name__ = "ChatBot"
 
 __help__ = """
 Chatbot utilizes the Kuki API and allows Cutiepii to talk and provides a more interactive group chat experience.
-
 *Commands:* 
 *Admins only:*
    ➢ `addchat`*:* Enables Chatbot mode in the chat.
    ➢ `rmchat`*:* Disables Chatbot mode in the chat.
-   
-Reports bugs at @Black_Knights_Union_Support
-"""
+"""   
+#Reports bugs at @Black_Knights_Union_Support
+
 
 __mod_name__ = "ChatBot"
 
-ADD_CHAT_HANDLER = CommandHandler("addchat", add_chat)
-REMOVE_CHAT_HANDLER = CommandHandler("rmchat", rem_chat)
+ADD_CHAT_HANDLER = CommandHandler("addchat", add_chat, run_async=True)
+REMOVE_CHAT_HANDLER = CommandHandler("rmchat", rem_chat, run_async=True)
 CHATBOT_HANDLER = MessageHandler(
     Filters.text & (~Filters.regex(r"^#[^\s]+") & ~Filters.regex(r"^!")
-                    & ~Filters.regex(r"^\/")), chatbot)
+                    & ~Filters.regex(r"^\/")), chatbot, run_async=True)
 LIST_ALL_CHATS_HANDLER = CommandHandler(
-    "allchats", list_all_chats, filters=CustomFilters.dev_filter)
+    "allchats", list_all_chats, filters=CustomFilters.dev_filter, run_async=True)
 
 dispatcher.add_handler(ADD_CHAT_HANDLER)
 dispatcher.add_handler(REMOVE_CHAT_HANDLER)
