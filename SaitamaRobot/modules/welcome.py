@@ -266,7 +266,7 @@ def new_member(update: Update, context: CallbackContext):
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
                     f"A Tiger disaster user joined the chat"
-                    parse_mode=ParseMode.MARKDOWN, 
+                    parse_mode=PARSEMODE.MARKDOWN, 
                 )
                 continue
 
