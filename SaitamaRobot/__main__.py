@@ -74,25 +74,28 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Yahallo Watashi wa Echidna, I am Groups Management Bot !! I can Help You Manage Your Group for you!!, send /help for command list...[.](https://telegra.ph/file/0f3e7311c5023117706b7.jpg)
+Yahallo Watashi wa Echidna, I am Groups Management Bot !! I can Help You Manage Your Group for you!!, send /help for command list...[.](https://telegra.ph/file/d33304f886c56e4aa0327.jpg)
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ Add Me ➕️", url="t.me/Echidna_Robot?startgroup=true"),
+            text="➕️ Aᴅᴅ Mᴇ ➕️", url="t.me/Echidna_Robot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="Echidna"),
         InlineKeyboardButton(
             text="ɢʀᴏᴜᴘ", url=f"https://t.me/anime_hubon"),
-        InlineKeyboardButton(text="Echidna Support ", url=f"https://t.me/Echidna_Support"
+        InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ ", url=f"https://t.me/Echidna_Support"
             
         
         ),
     ],
     [
-        InlineKeyboardButton(text="ꜱᴛᴀʀᴛ ᴜsɪɴɢ ʙᴏᴛ", callback_data="help_back"),
+        InlineKeyboardButton(text="Cᴏᴍᴍᴀɴᴅs", callback_data="help_back"),
+    ],
+    [
+        InlineKeyboardButton(text="Nᴇᴛᴡᴏʀᴋ", url=f"https://t.me/Echidna_Netwroks"),
     ],
 ]
 
